@@ -1,0 +1,224 @@
+/* ---------------------- GLOBAL RESET ---------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", system-ui, Arial, sans-serif;
+  transition: all 0.15s ease-in-out;
+}
+
+/* ---------------------- BACKGROUND ---------------------- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #e2e8f0;
+
+  /* Your background image */
+  background: url("./images/legal.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Subtle dark overlay for readability */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 25, 0.72); /* dark overlay */
+  backdrop-filter: blur(6px);        /* glass blur for elegance */
+  z-index: -1;
+}
+.card {
+  position: relative;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Background glow effect */
+.bg-gradient {
+  position: fixed;
+  width: 140%;
+  height: 120%;
+  top: -10%;
+  left: -20%;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1), transparent 60%);
+  filter: blur(60px);
+}
+
+/* ---------------------- APP CONTAINER ---------------------- */
+
+.app {
+  width: 100%;
+  max-width: 880px;
+  margin: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------------------- CARD COMPONENT ---------------------- */
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 24px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Hover lift effect */
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---------------------- HEADER ---------------------- */
+
+.header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #93c5fd, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* ---------------------- FORM STYLING ---------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #f1f5f9;
+}
+
+/* File input row */
+
+.upload-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.upload-row input[type="file"] {
+  flex: 1;
+  color: #f8fafc;
+  font-size: 0.9rem;
+}
+
+.hint {
+  margin-top: -4px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.active-file {
+  font-size: 0.85rem;
+  color: #a5b4fc;
+}
+
+/* Textarea */
+
+textarea {
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.6);
+}
+
+/* ---------------------- BUTTONS ---------------------- */
+
+button {
+  padding: 9px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: #0f172a;
+  background: linear-gradient(90deg, #60a5fa, #c084fc);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.6);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------------------- RESULT STYLING ---------------------- */
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  min-height: 16px;
+}
+
+.answer h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.answer p {
+  margin: 0;
+  color: #f8fafc;
+}
+
+/* ---------------------- FOOTER ---------------------- */
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Legal Search Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-gradient"></div>
+
+    <div class="app">
+      <header class="header card">
+        <h1>Legal Search Assistant</h1>
+        <p>
+          Upload your legal / policy PDF and get instant meaningful answers using AI-powered document search.
+        </p>
+      </header>
+
+      <main class="main">
+        <!-- Upload Form -->
+        <form id="upload-form" class="form card" enctype="multipart/form-data">
+          <label>Upload PDF</label>
+          <p class="hint">Select a PDF document (Judgment, Policy, Act, etc.)</p>
+
+          <div class="upload-row">
+            <input type="file" id="pdf-file" name="file" accept="application/pdf" />
+            <button type="submit" id="upload-btn">Upload & Index</button>
+          </div>
+
+          <div id="upload-status" class="status"></div>
+          <div id="active-file" class="active-file"></div>
+        </form>
+
+        <!-- Ask Question Form -->
+        <form id="ask-form" class="form card">
+          <label>Your Question</label>
+          <textarea
+            id="question"
+            rows="3"
+            placeholder="Example: What is the Centre of Excellence in AI for Education?"
+          ></textarea>
+
+          <button type="submit" id="ask-btn">Ask</button>
+        </form>
+
+        <!-- Output -->
+        <section class="result-section">
+          <div id="status" class="status"></div>
+
+          <div id="answer-container" class="answer card hidden">
+            <h2>Answer</h2>
+            <p id="answer-text"></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>These is Created by Shreyash .</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
